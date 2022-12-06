@@ -10,7 +10,7 @@ public:
 	CHUYENVIEN(string, string, int, vector<string>, int);
 	CHUYENVIEN(const CHUYENVIEN&);
 	~CHUYENVIEN();
-	int tinhluong();
+	double tinhluong();
 	void input();
 	void output();
 };

@@ -9,7 +9,7 @@ public:
 	TROGIANG(string, string, int, int);
 	TROGIANG(const TROGIANG&);
 	~TROGIANG();
-	int tinhluong();
+	double tinhluong();
 	void input();
 	void output();
 };

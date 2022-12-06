@@ -16,6 +16,6 @@ public:
 	NHANSU(const NHANSU&);
 	virtual void input();
 	virtual void output();
-	virtual int tinhluong();
+	virtual double tinhluong();
 };
 

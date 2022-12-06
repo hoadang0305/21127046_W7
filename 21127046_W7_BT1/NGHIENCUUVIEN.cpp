@@ -19,12 +19,13 @@ NGHIENCUUVIEN::~NGHIENCUUVIEN() {
 	this->duAnNghienCuu.clear();
 	this->duAnNghienCuu = {};
 }
-int NGHIENCUUVIEN::tinhluong() {
+double NGHIENCUUVIEN::tinhluong() {
 	int count = 0;
 	for (int i = 0; i < this->duAnNghienCuu.size(); i++) {
 		if (this->duAnNghienCuu[i][0] == 'D' || this->duAnNghienCuu[i][0] == 'd') count++;
 	}
-	return NHANSU::tinhluong() + (this->namKN * 2 + count) * 20000;
+	double temp = NHANSU::tinhluong();
+	return temp + (double)(this->namKN * 2 + count) * 20000;
 }
 void NGHIENCUUVIEN::input() {
 	NHANSU::input();

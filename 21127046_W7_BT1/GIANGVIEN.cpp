@@ -24,8 +24,8 @@ GIANGVIEN::~GIANGVIEN() {
 	monGiangDay.clear();
 	monGiangDay = {};
 }
-int GIANGVIEN::tinhluong() {
-	return NHANSU::tinhluong() + this->monGiangDay.size() * namGiangDay * 0.12 * 20000;
+double GIANGVIEN::tinhluong() {
+	return NHANSU::tinhluong() + (double)this->monGiangDay.size() * namGiangDay * 0.12 * 20000;
 }
 void GIANGVIEN::input() {
 	NHANSU::input();

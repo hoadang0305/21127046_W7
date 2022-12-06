@@ -33,6 +33,6 @@ void NHANSU::output() {
 	else cout << "ngay sinh: " << this->sinhnhat << endl;
 	cout << "ma so nhan vien: " << this->ID << endl;
 }
-int NHANSU::tinhluong() {
+double NHANSU::tinhluong() {
 	return 0;
 }

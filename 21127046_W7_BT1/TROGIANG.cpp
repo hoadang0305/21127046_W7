@@ -13,8 +13,8 @@ TROGIANG::TROGIANG(const TROGIANG& a) :
 	this->soMonTroGiang = a.soMonTroGiang;
 }
 TROGIANG::~TROGIANG() {};
-int TROGIANG::tinhluong() {
-	return this->soMonTroGiang * 0.3 * 18000;
+double TROGIANG::tinhluong() {
+	return (double)this->soMonTroGiang * 0.3 * 18000;
 }
 void TROGIANG::input() {
 	NHANSU::input();

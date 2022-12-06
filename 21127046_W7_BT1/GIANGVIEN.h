@@ -12,7 +12,7 @@ public:
 	GIANGVIEN(string, string, int, string, string, int, vector<string>);
 	GIANGVIEN(const GIANGVIEN&);
 	~GIANGVIEN();
-	int tinhluong();
+	double tinhluong();
 	void input();
 	void output();
 };

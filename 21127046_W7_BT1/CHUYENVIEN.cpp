@@ -18,12 +18,13 @@ CHUYENVIEN::CHUYENVIEN(const CHUYENVIEN& a) :
 	this->duAnGiaoDuc.clear();
 	this->duAnGiaoDuc = {};
 }
-int CHUYENVIEN::tinhluong() {
+double CHUYENVIEN::tinhluong() {
 	int count = 0;
 	for (int i = 0; i < this->duAnGiaoDuc.size(); i++) {
 		if (this->duAnGiaoDuc[i][0] == 'T' || this->duAnGiaoDuc[i][0] == 't') count++;
 	}
-	return NHANSU::tinhluong() + (this->namKNLV * 4 + count) * 18000;
+	double temp = NHANSU::tinhluong();
+	return temp + (double)(this->namKNLV * 4 + count) * 18000;
 }
 void CHUYENVIEN::input() {
 	NHANSU::input();
