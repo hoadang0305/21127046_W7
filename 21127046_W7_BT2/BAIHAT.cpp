@@ -37,7 +37,7 @@ void BAIHAT::inputBaiHat() {
 	cin >> this->luotNghe;
 	if (luotNghe < 0) luotNghe = 0;
 }
-void BAIHAT::outphutBaiHat() {
+void BAIHAT::outputBaiHat() {
 	cout << "======THONG TIN BAI HAT======" << endl;
 	cout << "ten bai hat: " << this->tenBaiHat << endl;
 	cout << "loi bai hat: <<<" << this->lyric << "...>>>" << endl;
@@ -45,4 +45,7 @@ void BAIHAT::outphutBaiHat() {
 	cout << "the loai: nhac " << this->theLoai << endl;
 	cout << "nam sang tac: " << this->namSangTac << endl;
 	cout << "so luot nghe: " << this->luotNghe << endl;
+}
+float BAIHAT::getGiaTriBanQuyen() {
+	return 0;
 }

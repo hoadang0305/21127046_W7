@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 class BAIHAT
 {
@@ -12,6 +13,7 @@ public:
 	BAIHAT(const BAIHAT&);
 	~BAIHAT();
 	virtual void inputBaiHat();
-	virtual void outphutBaiHat();
+	virtual void outputBaiHat();
+	virtual float getGiaTriBanQuyen();
 };
 

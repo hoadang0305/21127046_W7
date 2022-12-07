@@ -3,12 +3,13 @@
 class BAIHATDOCQUYEN : public BAIHAT
 {
 private:
-	int gtBanQuyen;
+	float gtBanQuyen;
 public:
 	BAIHATDOCQUYEN();
 	BAIHATDOCQUYEN(const BAIHATDOCQUYEN&);
 	~BAIHATDOCQUYEN();
 	void inputBaiHat();
 	void outputBaiHat();
+	float getGiaTriBanQuyen();
 };
 

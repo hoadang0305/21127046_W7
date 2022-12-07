@@ -18,5 +18,31 @@
     <ClCompile Include="21127046_W7_BT2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BAIHAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BAIHATDOCQUYEN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TAIKHOAN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TAIKHOANVIP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BAIHAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BAIHATDOCQUYEN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TAIKHOAN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TAIKHOANVIP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
