@@ -16,6 +16,6 @@ public:
 	bool checkMatKhau(string);
 	virtual void addPhiBanQuyen(float);
 	virtual void addBaiHatYeuThich(BAIHAT*);
-	virtual void addBaiHatBanQuyenYeuThich(const BAIHATDOCQUYEN&);
+	virtual void addBaiHatBanQuyenYeuThich(BAIHATDOCQUYEN*);
 };
 

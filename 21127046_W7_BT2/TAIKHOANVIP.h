@@ -11,7 +11,7 @@ public:
 	void taoTaiKhoan();
 	void xuatThongTinTaiKhoan();
 	void addPhiBanQuyen(float);
-	virtual void addBaiHatYeuThich(const BAIHAT&);
-	virtual void addBaiHatBanQuyenYeuThich(const BAIHATDOCQUYEN&);
+	void addBaiHatYeuThich(BAIHAT*);
+	void addBaiHatBanQuyenYeuThich(BAIHATDOCQUYEN*);
 };
 

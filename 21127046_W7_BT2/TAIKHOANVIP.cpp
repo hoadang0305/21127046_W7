@@ -24,11 +24,9 @@ void TAIKHOANVIP::xuatThongTinTaiKhoan() {
 void TAIKHOANVIP::addPhiBanQuyen(float tienphi) {
 	this->phibanquyen += tienphi * 0.5;
 }
-void TAIKHOANVIP::addBaiHatYeuThich(const BAIHAT& a) {
-	BAIHAT temp(a);
-	this->listNhacYeuthich.push_back(&temp);
+void TAIKHOANVIP::addBaiHatYeuThich(BAIHAT* a) {
+	this->listNhacYeuthich.push_back(a);
 }
-void TAIKHOANVIP::addBaiHatBanQuyenYeuThich(const BAIHATDOCQUYEN& a) {
-	BAIHATDOCQUYEN temp(a);
-	this->listNhacYeuthich.push_back(&temp);
+void TAIKHOANVIP::addBaiHatBanQuyenYeuThich(BAIHATDOCQUYEN* a) {
+	this->listNhacYeuthich.push_back(a);
 }

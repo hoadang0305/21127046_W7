@@ -4,7 +4,7 @@ TAIKHOAN::TAIKHOAN() {
 	tenDangNhap = "unknown";
 	matkhau = "########";
 	phibanquyen = 0;
-	listNhacYeuthich = {NULL};
+	listNhacYeuthich = {};
 }
 TAIKHOAN::TAIKHOAN(const TAIKHOAN& a) {
 	this->tenDangNhap = a.tenDangNhap;
@@ -59,7 +59,6 @@ void TAIKHOAN::addPhiBanQuyen(float tienphi) {
 void TAIKHOAN::addBaiHatYeuThich( BAIHAT* a) {
 	this->listNhacYeuthich.push_back(a);
 }
-void TAIKHOAN::addBaiHatBanQuyenYeuThich(const BAIHATDOCQUYEN& a) {
-	BAIHATDOCQUYEN temp(a);
-	this->listNhacYeuthich.push_back(&temp);
+void TAIKHOAN::addBaiHatBanQuyenYeuThich(BAIHATDOCQUYEN* a) {
+	this->listNhacYeuthich.push_back(a);
 }
