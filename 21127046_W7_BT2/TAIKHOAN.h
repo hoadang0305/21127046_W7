@@ -16,6 +16,6 @@ public:
 	bool checkMatKhau(string);
 	virtual void addPhiBanQuyen(float);
 	virtual void addBaiHatYeuThich(BAIHAT*);
-	virtual void addBaiHatBanQuyenYeuThich(BAIHATDOCQUYEN*);
+	virtual bool isVip();
 };
 

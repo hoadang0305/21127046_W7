@@ -12,6 +12,6 @@ public:
 	void xuatThongTinTaiKhoan();
 	void addPhiBanQuyen(float);
 	void addBaiHatYeuThich(BAIHAT*);
-	void addBaiHatBanQuyenYeuThich(BAIHATDOCQUYEN*);
+	bool isVip();
 };
 

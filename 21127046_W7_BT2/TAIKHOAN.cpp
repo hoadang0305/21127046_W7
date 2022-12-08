@@ -59,6 +59,6 @@ void TAIKHOAN::addPhiBanQuyen(float tienphi) {
 void TAIKHOAN::addBaiHatYeuThich( BAIHAT* a) {
 	this->listNhacYeuthich.push_back(a);
 }
-void TAIKHOAN::addBaiHatBanQuyenYeuThich(BAIHATDOCQUYEN* a) {
-	this->listNhacYeuthich.push_back(a);
+bool TAIKHOAN::isVip() {
+	return false;
 }

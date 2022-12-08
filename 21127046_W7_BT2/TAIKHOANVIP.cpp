@@ -14,12 +14,17 @@ TAIKHOANVIP::TAIKHOANVIP(const TAIKHOANVIP& a) {
 TAIKHOANVIP::~TAIKHOANVIP(){}
 void TAIKHOANVIP::taoTaiKhoan() {
 	TAIKHOAN::taoTaiKhoan();
-	cout << "nhap so thang tro thanh VIP member(20000d/thang): ";
-	cin >> this->thangVip;
+	cout << "nhap so tien tro thanh VIP member(20000d/thang): ";
+	int tien;
+	do {
+		cin >> tien;
+		if (tien < 20000) cout << "khong du tien nap VIP, nhap lai so tien: ";
+	} while (tien < 20000);
+	this->thangVip = (int)(tien / 20000);
 }
 void TAIKHOANVIP::xuatThongTinTaiKhoan() {
 	TAIKHOAN::xuatThongTinTaiKhoan();
-	cout << "thoi han VIP: " << this->thangVip;
+	cout << "thoi han VIP: " << this->thangVip << "thang" << endl;
 }
 void TAIKHOANVIP::addPhiBanQuyen(float tienphi) {
 	this->phibanquyen += tienphi * 0.5;
@@ -27,6 +32,6 @@ void TAIKHOANVIP::addPhiBanQuyen(float tienphi) {
 void TAIKHOANVIP::addBaiHatYeuThich(BAIHAT* a) {
 	this->listNhacYeuthich.push_back(a);
 }
-void TAIKHOANVIP::addBaiHatBanQuyenYeuThich(BAIHATDOCQUYEN* a) {
-	this->listNhacYeuthich.push_back(a);
+bool TAIKHOANVIP::isVip() {
+	return true;
 }

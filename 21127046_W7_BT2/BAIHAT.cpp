@@ -26,11 +26,18 @@ void BAIHAT::inputBaiHat() {
 	getline(cin, this->lyric);
 	cout << "nhap ten ca si: ";
 	getline(cin, this->tenCaSi);
-	cout << "nhap the loai(Viet Nam - Au My - Han Quoc): ";
-	getline(cin, this->theLoai);
-	if (this->theLoai != "Viet Nam" && this->theLoai != "Au My" && this->theLoai != "Han Quoc") {
-		this->theLoai = "unknown";
-	}
+	cout << "nhap the loai: " << endl;
+	cout << " 1 - Viet Nam" << endl;
+	cout << " 2 - Au My" << endl;
+	cout << "3 - Han Quoc" << endl;
+	int x;
+	do {
+		cin >> x;
+		if (x != 1 && x != 2 && x != 3) cout << "khong co loai do, nhap lai: ";
+	} while (x != 1 && x != 2 && x != 3);
+	if (x == 1) this->theLoai = "Viet Nam";
+	if (x == 2) this->theLoai = "Au My";
+	else this->theLoai = "Han Quoc";
 	cout << "nhap nam sang tac bai hat: ";
 	cin >> this->namSangTac;
 	cout << "nhap luot nghe bai hat: ";
@@ -48,4 +55,14 @@ void BAIHAT::outputBaiHat() {
 }
 float BAIHAT::getGiaTriBanQuyen() {
 	return 0;
+}
+string BAIHAT::getTenBaiHat() {
+	return this->tenBaiHat;
+}
+string BAIHAT::getTheLoai() {
+	string temp = "tai khoan VIP moi co the chon the loai!";
+	return temp;
+}
+int BAIHAT::getLuotNghe() {
+	return this->luotNghe;
 }

@@ -130,12 +130,14 @@
     <ClCompile Include="21127046_W7_BT2.cpp" />
     <ClCompile Include="BAIHAT.cpp" />
     <ClCompile Include="BAIHATDOCQUYEN.cpp" />
+    <ClCompile Include="MUSICAPP.cpp" />
     <ClCompile Include="TAIKHOAN.cpp" />
     <ClCompile Include="TAIKHOANVIP.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BAIHAT.h" />
     <ClInclude Include="BAIHATDOCQUYEN.h" />
+    <ClInclude Include="MUSICAPP.h" />
     <ClInclude Include="TAIKHOAN.h" />
     <ClInclude Include="TAIKHOANVIP.h" />
   </ItemGroup>

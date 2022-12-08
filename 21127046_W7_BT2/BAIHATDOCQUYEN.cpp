@@ -22,3 +22,12 @@ void BAIHATDOCQUYEN::outputBaiHat() {
 float BAIHATDOCQUYEN::getGiaTriBanQuyen() {
 	return this->gtBanQuyen;
 }
+string BAIHATDOCQUYEN::getTenBaiHat() {
+	return this->tenBaiHat;
+}
+string BAIHATDOCQUYEN::getTheLoai() {
+	return this->theLoai;
+}
+int BAIHATDOCQUYEN::getLuotNghe() {
+	return this->luotNghe;
+}

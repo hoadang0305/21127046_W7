@@ -15,5 +15,8 @@ public:
 	virtual void inputBaiHat();
 	virtual void outputBaiHat();
 	virtual float getGiaTriBanQuyen();
+	virtual string getTenBaiHat();
+	virtual string getTheLoai();
+	virtual int getLuotNghe();
 };
 

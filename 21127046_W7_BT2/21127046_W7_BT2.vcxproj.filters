@@ -30,6 +30,9 @@
     <ClCompile Include="TAIKHOANVIP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MUSICAPP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BAIHAT.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TAIKHOANVIP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MUSICAPP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

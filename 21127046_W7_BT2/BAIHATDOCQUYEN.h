@@ -11,5 +11,8 @@ public:
 	void inputBaiHat();
 	void outputBaiHat();
 	float getGiaTriBanQuyen();
+	string getTenBaiHat();
+	string getTheLoai();
+	int getLuotNghe();
 };
 

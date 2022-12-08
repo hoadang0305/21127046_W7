@@ -1,8 +1,10 @@
-#include "BAIHATDOCQUYEN.h"
-#include "TAIKHOANVIP.h"
+#include "MUSICAPP.h"
 int main() {
-	BAIHAT *a = new BAIHAT;
-	BAIHATDOCQUYEN* b = new BAIHATDOCQUYEN;
+	MUSICAPP check;
+	check.khoiTaoPLayList();
+	check.xuatTop5();
+	/*BAIHAT* a = new BAIHAT;
+	BAIHAT* b = new BAIHATDOCQUYEN;
 	a->inputBaiHat();
 	b->inputBaiHat(); 
 	cout << "---------------" << endl;
@@ -11,9 +13,11 @@ int main() {
 	temp.taoTaiKhoan();
 	temp.addBaiHatYeuThich(a);
 	temp.addPhiBanQuyen(a->getGiaTriBanQuyen());
-	temp.addBaiHatBanQuyenYeuThich(b);
+	//temp.addBaiHatBanQuyenYeuThich(b);
+	temp.addBaiHatYeuThich(b);
 	temp.addPhiBanQuyen(b->getGiaTriBanQuyen());
 	temp.xuatThongTinTaiKhoan();
 	delete a;
+	delete b;*/
 	return 0;
 }
