@@ -2,7 +2,7 @@
 int main() {
 	MUSICAPP check;
 	check.khoiTaoPLayList();
-	check.xuatTop5();
+	//check.xuatTo
 	/*BAIHAT* a = new BAIHAT;
 	BAIHAT* b = new BAIHATDOCQUYEN;
 	a->inputBaiHat();

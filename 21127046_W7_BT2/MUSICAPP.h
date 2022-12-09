@@ -12,5 +12,6 @@ public:
 	void xuatTop5();
 	void sapXepPlayList();
 	void baiHatDeXuatVIP();
+	void khoiTaoTaiKhoan();
 };
 

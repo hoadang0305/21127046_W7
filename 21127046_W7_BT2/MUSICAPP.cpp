@@ -96,9 +96,50 @@ void MUSICAPP::baiHatDeXuatVIP() {
 				}
 			}
 		}
+		else if (x == 2) {
+			int temp = 0;
+			for (int i = 0; i < this->playlist.size(); i++) {
+				if (this->playlist[i]->getTheLoai() == "Au My") {
+					BAIHAT* temp;
+					if (this->playlist[i]->getGiaTriBanQuyen() == 0) {
+						temp = new BAIHAT;
+						temp = this->playlist[i];
+					}
+					else {
+						temp = new BAIHATDOCQUYEN;
+						temp = this->playlist[i];
+					}
+					VIPlist.push_back(temp);
+				}
+			}
+		}
+		else {
+			int temp = 0;
+			for (int i = 0; i < this->playlist.size(); i++) {
+				if (this->playlist[i]->getTheLoai() == "Han Quoc") {
+					BAIHAT* temp;
+					if (this->playlist[i]->getGiaTriBanQuyen() == 0) {
+						temp = new BAIHAT;
+						temp = this->playlist[i];
+					}
+					else {
+						temp = new BAIHATDOCQUYEN;
+						temp = this->playlist[i];
+					}
+					VIPlist.push_back(temp);
+				}
+			}
+		}
+		if (VIPlist.size() > 5) x = 5;
+		else x = VIPlist.size();
 		cout << "------------------------" << endl;
 		cout << "|    PLAYLIST VIP      |" << endl;
 		cout << "------------------------" << endl;
+		for (int i = 0; i < x; i++) {
+			cout << "-----------------" << endl;
+			cout << "bai hat top" << i + 1 << endl;
+			VIPlist[i]->outputBaiHat();
+		}
 	}
 	else cout << "playlist dang rong!" << endl;
 }
