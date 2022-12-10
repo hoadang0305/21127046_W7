@@ -1,7 +1,14 @@
 #include "MUSICAPP.h"
 int main() {
+	cout << "   -----------------------" << endl;
+	cout << "   |    DEMO MUSIC APP   |" << endl;
+	cout << "   -----------------------" << endl;
+
 	MUSICAPP check;
 	check.khoiTaoPLayList();
+	cout << " -------------------------------" << endl;
+	TAIKHOAN * account = check.xuLiDangNhapDangKi();
+	
 	//check.xuatTo
 	/*BAIHAT* a = new BAIHAT;
 	BAIHAT* b = new BAIHATDOCQUYEN;

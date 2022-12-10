@@ -44,7 +44,7 @@ void TAIKHOAN::xuatThongTinTaiKhoan() {
 	cout << "mat khau: " << this->matkhau << endl;
 	cout << "phi ban quyen: " << this->phibanquyen << endl;
 	cout << "danh sach bai hat yeu thich: ";
-	if (this->listNhacYeuthich.size() == 0) cout << "khong co du lieu";
+	if (this->listNhacYeuthich.size() == 0) cout << "khong co du lieu" << endl;
 	else {
 		cout << endl;
 		for (int i = 0; i < listNhacYeuthich.size(); i++) {
@@ -61,4 +61,10 @@ void TAIKHOAN::addBaiHatYeuThich( BAIHAT* a) {
 }
 bool TAIKHOAN::isVip() {
 	return false;
+}
+string TAIKHOAN::getTenDangNhap() {
+	return this->tenDangNhap;
+}
+string TAIKHOAN::getMatKhau() {
+	return this->matkhau;
 }

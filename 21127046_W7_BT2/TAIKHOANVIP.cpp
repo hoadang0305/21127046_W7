@@ -35,3 +35,9 @@ void TAIKHOANVIP::addBaiHatYeuThich(BAIHAT* a) {
 bool TAIKHOANVIP::isVip() {
 	return true;
 }
+string TAIKHOANVIP::getTenDangNhap() {
+	return this->tenDangNhap;
+}
+string TAIKHOANVIP::getMatKhau() {
+	return this->matkhau;
+}

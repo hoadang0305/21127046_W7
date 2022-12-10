@@ -17,5 +17,7 @@ public:
 	virtual void addPhiBanQuyen(float);
 	virtual void addBaiHatYeuThich(BAIHAT*);
 	virtual bool isVip();
+	virtual string getTenDangNhap();
+	virtual string getMatKhau();
 };
 

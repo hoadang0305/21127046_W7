@@ -12,6 +12,7 @@ public:
 	void xuatTop5();
 	void sapXepPlayList();
 	void baiHatDeXuatVIP();
-	void khoiTaoTaiKhoan();
+	int checkTaiKhoanAvailable(string, string);
+	TAIKHOAN* xuLiDangNhapDangKi();
 };
 

@@ -12,9 +12,9 @@ MUSICAPP::~MUSICAPP() {
 }
 void MUSICAPP::khoiTaoPLayList() {
 	int n,x;
-	cout << "-----------------------" << endl;
-	cout << "|  KHOI TAO PLAYLIST  |" << endl;
-	cout << "-----------------------" << endl;
+	cout << "   -----------------------" << endl;
+	cout << "   |  KHOI TAO PLAYLIST  |" << endl;
+	cout << "   -----------------------" << endl;
 	cout << " nhap so luong bai hat:";
 	cin >> n;
 	for (int i = 0; i < n; i++) {
@@ -56,9 +56,9 @@ void MUSICAPP::xuatTop5() {
 		if (this->playlist.size() <= 5) x = this->playlist.size();
 		else x = 5;
 		this->sapXepPlayList();
-		cout << "------------------------" << endl;
-		cout << "|  <>   PLAYLIST   <>  |" << endl;
-		cout << "------------------------" << endl;
+		cout << "   ------------------------" << endl;
+		cout << "   |  <>   PLAYLIST   <>  |" << endl;
+		cout << "   ------------------------" << endl;
 		for (int i = 0; i < x; i++) {
 			cout << "-----------------" << endl;
 			cout << "bai hat top" << i + 1 << endl;
@@ -132,9 +132,9 @@ void MUSICAPP::baiHatDeXuatVIP() {
 		}
 		if (VIPlist.size() > 5) x = 5;
 		else x = VIPlist.size();
-		cout << "------------------------" << endl;
-		cout << "|    PLAYLIST VIP      |" << endl;
-		cout << "------------------------" << endl;
+		cout << "   ------------------------" << endl;
+		cout << "   |    PLAYLIST VIP      |" << endl;
+		cout << "   ------------------------" << endl;
 		for (int i = 0; i < x; i++) {
 			cout << "-----------------" << endl;
 			cout << "bai hat top" << i + 1 << endl;
@@ -142,4 +142,93 @@ void MUSICAPP::baiHatDeXuatVIP() {
 		}
 	}
 	else cout << "playlist dang rong!" << endl;
+}
+int MUSICAPP::checkTaiKhoanAvailable(string taikhoan, string matkhau) {
+	for (int i = 0; i < userlist.size(); i++) {
+		if (userlist[i]->getTenDangNhap() == taikhoan && userlist[i]->getMatKhau() == matkhau) {
+			return i;
+		}
+	}
+	return -1;
+}
+TAIKHOAN* MUSICAPP::xuLiDangNhapDangKi() {
+	cout << "ban muon dang nhap hay dang ki ?" << endl;
+	cout << "1 - dang nhap" << endl;
+	cout << "2 - dang ki" << endl;
+	int x;
+	do {
+		cin >> x;
+		if (x != 1 && x != 2) cout << "phuong thuc khong hop le, nhap lai:";
+	} while (x != 1 && x != 2);
+	if (x == 1) {
+		int check = 0;
+		string taikhoan, matkhau;
+		cout << " nhap ten tai khoan: ";
+		do {
+			rewind(stdin);
+			getline(cin, taikhoan);
+			cout << "nhap mat khau";
+			getline(cin, matkhau);
+			if (this->checkTaiKhoanAvailable(taikhoan, matkhau) == -1) {
+				cout << "tai khoan khong ton tai,ban muon nhap lai hay dang ki? " << endl;
+				cout << "1 - nhap lai tai khoan, mat khau" << endl;
+				cout << "2 - dang ki moi";
+				int temp;
+				do {
+					cin >> temp;
+					if (temp != 1 && temp != 2) cout << "input khong hop le, vui long nhap lai:" << endl;
+				} while (temp != 1 && temp != 2);
+				if (temp == 1) check = 1;
+				else {
+					check = 2;
+					TAIKHOAN* TKnew;
+					cout << " 1 - tai khoan pho thong" << endl;
+					cout << " 2 - tai khoan vip" << endl;
+					int temp;
+					do {
+						cin >> temp;
+						if (temp != 1 && temp != 2) cout << "input khong hop le, hay nhap lai:";
+					} while (temp != 1 && temp != 2);
+					if (temp == 1) {
+						TKnew = new TAIKHOAN;
+						TKnew->taoTaiKhoan();
+						userlist.push_back(TKnew);
+						return TKnew;
+					}
+					else {
+						TKnew = new TAIKHOANVIP;
+						TKnew->taoTaiKhoan();
+						userlist.push_back(TKnew);
+						return TKnew;
+					}
+				}
+			}
+			else {
+				int flag = this->checkTaiKhoanAvailable(taikhoan, matkhau);
+				return userlist[flag];
+			}
+		} while (check == 1);
+	}
+	else {
+		TAIKHOAN* TKnew;
+		cout << " 1 - tai khoan pho thong" << endl;
+		cout << " 2 - tai khoan vip" << endl;
+		int temp;
+		do {
+			cin >> temp;
+			if (temp != 1 && temp != 2) cout << "input khong hop le, hay nhap lai:";
+		} while (temp != 1 && temp != 2);
+		if (temp == 1) {
+			TKnew = new TAIKHOAN;
+			TKnew->taoTaiKhoan();
+			userlist.push_back(TKnew);
+			return TKnew;
+		}
+		else {
+			TKnew = new TAIKHOANVIP;
+			TKnew->taoTaiKhoan();
+			userlist.push_back(TKnew);
+			return TKnew;
+		}
+	}
 }

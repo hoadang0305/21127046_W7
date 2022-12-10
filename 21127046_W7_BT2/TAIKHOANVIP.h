@@ -13,5 +13,7 @@ public:
 	void addPhiBanQuyen(float);
 	void addBaiHatYeuThich(BAIHAT*);
 	bool isVip();
+	string getTenDangNhap();
+	string getMatKhau();
 };
 
