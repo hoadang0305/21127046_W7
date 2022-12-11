@@ -15,7 +15,7 @@ void MUSICAPP::khoiTaoPLayList() {
 	cout << "   -----------------------" << endl;
 	cout << "   |  KHOI TAO PLAYLIST  |" << endl;
 	cout << "   -----------------------" << endl;
-	cout << " nhap so luong bai hat:";
+	cout << "nhap so luong bai hat:";
 	cin >> n;
 	for (int i = 0; i < n; i++) {
 		BAIHAT* temp;
@@ -61,7 +61,7 @@ void MUSICAPP::xuatTop5() {
 		cout << "   ------------------------" << endl;
 		for (int i = 0; i < x; i++) {
 			cout << "-----------------" << endl;
-			cout << "bai hat top" << i + 1 << endl;
+			cout << "bai hat thu " << i + 1 << endl;
 			this->playlist[i]->outputBaiHat();
 		}
 	}
@@ -70,75 +70,37 @@ void MUSICAPP::xuatTop5() {
 void MUSICAPP::baiHatDeXuatVIP() {
 	if (this->playlist.size() > 0) {
 		int x;
-		vector<BAIHAT*> VIPlist;
+		if (this->playlist.size() <= 5) x = this->playlist.size();
+		else x = 5;
+		this->sapXepPlayList();
 		cout << " nhap the loai ban muon nghe:" << endl;
 		cout << "1 - Viet Nam" << endl;
 		cout << "2 - Au My" << endl;
 		cout << "3 - Han Quoc" << endl;
+		int n;
+		string temp;
 		do {
-			cin >> x;
-			if (x != 1 && x != 2 && x != 3) cout << "the loai khong hop le, hay nhap lai: ";
-		} while (x != 1 && x != 2 && x != 3);
-		if (x == 1) {
-			int temp = 0;
-			for (int i = 0; i < this->playlist.size(); i++) {
-				if (this->playlist[i]->getTheLoai() == "Viet Nam") {
-					BAIHAT* temp;
-					if (this->playlist[i]->getGiaTriBanQuyen() == 0) {
-						temp = new BAIHAT;
-						temp = this->playlist[i];
-					}
-					else {
-						temp = new BAIHATDOCQUYEN;
-						temp = this->playlist[i];
-					}
-					VIPlist.push_back(temp);
-				}
-			}
+			cin >> n;
+			if (n != 1 && n != 2 && n != 3) cout << "the loai khong hop le, hay nhap lai: ";
+		} while (n != 1 && n != 2 && n != 3);
+		if (n == 1) {
+			temp = "Viet Nam";
 		}
-		else if (x == 2) {
-			int temp = 0;
-			for (int i = 0; i < this->playlist.size(); i++) {
-				if (this->playlist[i]->getTheLoai() == "Au My") {
-					BAIHAT* temp;
-					if (this->playlist[i]->getGiaTriBanQuyen() == 0) {
-						temp = new BAIHAT;
-						temp = this->playlist[i];
-					}
-					else {
-						temp = new BAIHATDOCQUYEN;
-						temp = this->playlist[i];
-					}
-					VIPlist.push_back(temp);
-				}
-			}
+		else if (n == 2) {
+			temp = "Au My";
 		}
 		else {
-			int temp = 0;
-			for (int i = 0; i < this->playlist.size(); i++) {
-				if (this->playlist[i]->getTheLoai() == "Han Quoc") {
-					BAIHAT* temp;
-					if (this->playlist[i]->getGiaTriBanQuyen() == 0) {
-						temp = new BAIHAT;
-						temp = this->playlist[i];
-					}
-					else {
-						temp = new BAIHATDOCQUYEN;
-						temp = this->playlist[i];
-					}
-					VIPlist.push_back(temp);
-				}
-			}
+			temp = "Han Quoc";
 		}
-		if (VIPlist.size() > 5) x = 5;
-		else x = VIPlist.size();
 		cout << "   ------------------------" << endl;
 		cout << "   |    PLAYLIST VIP      |" << endl;
 		cout << "   ------------------------" << endl;
 		for (int i = 0; i < x; i++) {
 			cout << "-----------------" << endl;
-			cout << "bai hat top" << i + 1 << endl;
-			VIPlist[i]->outputBaiHat();
+			if (this->playlist[i]->getTheLoai() == temp) {
+				cout << "bai hat top" << i + 1 << endl;
+				this->playlist[i]->outputBaiHat();
+			}
 		}
 	}
 	else cout << "playlist dang rong!" << endl;
@@ -163,16 +125,16 @@ TAIKHOAN* MUSICAPP::xuLiDangNhapDangKi() {
 	if (x == 1) {
 		int check = 0;
 		string taikhoan, matkhau;
-		cout << " nhap ten tai khoan: ";
+		cout << "nhap ten tai khoan: ";
 		do {
 			rewind(stdin);
 			getline(cin, taikhoan);
-			cout << "nhap mat khau";
+			cout << "nhap mat khau: ";
 			getline(cin, matkhau);
 			if (this->checkTaiKhoanAvailable(taikhoan, matkhau) == -1) {
 				cout << "tai khoan khong ton tai,ban muon nhap lai hay dang ki? " << endl;
 				cout << "1 - nhap lai tai khoan, mat khau" << endl;
-				cout << "2 - dang ki moi";
+				cout << "2 - dang ki moi" << endl;
 				int temp;
 				do {
 					cin >> temp;
@@ -182,8 +144,8 @@ TAIKHOAN* MUSICAPP::xuLiDangNhapDangKi() {
 				else {
 					check = 2;
 					TAIKHOAN* TKnew;
-					cout << " 1 - tai khoan pho thong" << endl;
-					cout << " 2 - tai khoan vip" << endl;
+					cout << "1 - tai khoan pho thong" << endl;
+					cout << "2 - tai khoan vip" << endl;
 					int temp;
 					do {
 						cin >> temp;
@@ -211,8 +173,8 @@ TAIKHOAN* MUSICAPP::xuLiDangNhapDangKi() {
 	}
 	else {
 		TAIKHOAN* TKnew;
-		cout << " 1 - tai khoan pho thong" << endl;
-		cout << " 2 - tai khoan vip" << endl;
+		cout << "1 - tai khoan pho thong" << endl;
+		cout << "2 - tai khoan vip" << endl;
 		int temp;
 		do {
 			cin >> temp;
@@ -231,4 +193,112 @@ TAIKHOAN* MUSICAPP::xuLiDangNhapDangKi() {
 			return TKnew;
 		}
 	}
+}
+void MUSICAPP::appRunning(TAIKHOAN* temp) {
+	int check = 0;
+	do {
+		int x;
+		cout << "   -----------------------" << endl;
+		cout << "   |         MENU        |" << endl;
+		cout << "   -----------------------" << endl;
+	
+		cout << "1 - nghe nhac" << endl;
+		cout << "2 - xuat dang sach nhac yeu thich" << endl;
+		cout << "3 - xuat thong tin tai khoan" << endl;
+		cout << "4 - kiem tra tien ban quyen" << endl;
+		cout << "5 - nap them tien VIP" << endl;
+		cout << "0 - dang xuat" << endl;
+		cout << "nhap chuc nang: ";
+		do {
+			cin >> x;
+			if (x < 0 && x > 5) cout << "input khong hop le, vui long nhap lai: ";
+		} while (x < 0 && x > 5);
+		if (x == 1) {
+			if (temp->isVip() == false) {
+				this->xuatTop5();
+			}
+			else {
+				this->baiHatDeXuatVIP();
+			}
+			int checkloop = 0;
+			do {
+				cout << "------------" << endl;
+				cout << "1 - chon bai hat de nghe" << endl;
+				cout << "2 - chon bai hat de them vao playlist yeu thich" << endl;
+				cout << "3 - thoat chuc nang" << endl;
+				cout << "chon chuc nang: ";
+				int a;
+				do {
+					cin >> a;
+					if (a != 1 && a != 2 && a != 3) cout << "input khong hop le, vui long nhap lai: ";
+				} while (a != 1 && a != 2 && a != 3);
+				if (a == 1) {
+					this->phatNhac(temp);
+					checkloop = 0;
+				}
+				else if (a == 2) {
+					this->chonBaiHatYeuThich(temp);
+					checkloop = 0;
+				}
+				else {
+					checkloop = 1;
+				}
+			} while (checkloop == 0);
+		}
+		else if (x == 2) {
+			temp->xuatDanhSachYeuThich();
+		}
+		else if (x == 3) {
+			temp->xuatThongTinTaiKhoan();
+		}
+		else if (x == 4) {
+			cout << "so tien ban quyen ban phai tra la: " << temp->getPhiBanQuyen() << endl;
+		}
+		else if (x == 5) {
+			if (temp->isVip() == false) {
+				cout << "ban khong phai la thanh vien VIP" << endl;
+			}
+			else {
+				float tien;
+				cout << "so thang vip cua ban la: " << temp->getThangVIP() << endl;
+				cout << "so tien ban nhap la: ";
+				cin >> tien;
+				if (tien > 20000) {
+					temp->addThangVIP((int)tien / 20000);
+				}
+				else {
+					cout << "khong du tien de nap!" << endl;
+				}
+			}
+		}
+		else {
+			check = 1;
+		}
+
+	} while (check == 0);
+}
+void MUSICAPP::phatNhac(TAIKHOAN* a) {
+	cout << "chon bai hat de nghe:";
+	int x;
+	int check = this->playlist.size() + 1;
+	do {
+		cin >> x;
+		if (x < 0 && x > check) cout << "input khong hop le, vui long nhap lai: ";
+	} while (x < 0 && x > check);
+	cout << "-----------------------" << endl;
+	if (this->playlist[x-1]->getGiaTriBanQuyen() > 0) a->addPhiBanQuyen(this->playlist[x-1]->getGiaTriBanQuyen());
+	cout << this->playlist[x-1]->getTenBaiHat() << endl;
+	cout <<"lyric:" <<  this->playlist[x-1]->getLyric() << endl;
+}
+void MUSICAPP::chonBaiHatYeuThich(TAIKHOAN* a) {
+	cout << "chon bai hat de them vao:";
+	int check = this->playlist.size() + 1;
+	int x;
+	do {
+		cin >> x;
+		if (x < 0 && x > check) cout << "input khong hop le, vui long nhap lai: ";
+	} while (x < 0 && x > check);
+	a->addBaiHatYeuThich(this->playlist[x-1]);
+	a->addPhiBanQuyen(this->playlist[x-1]->getGiaTriBanQuyen());
+	cout << "bai hat da duoc them vao playlist yeu thich!";
 }

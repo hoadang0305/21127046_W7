@@ -41,3 +41,20 @@ string TAIKHOANVIP::getTenDangNhap() {
 string TAIKHOANVIP::getMatKhau() {
 	return this->matkhau;
 }
+void TAIKHOANVIP::xuatDanhSachYeuThich() {
+	if (listNhacYeuthich.size() == 0) cout << "danh sach rong! " << endl;
+	else {
+		for (int i = 0; i < listNhacYeuthich.size(); i++) {
+			listNhacYeuthich[i]->outputBaiHat();
+		}
+	}
+}
+float TAIKHOANVIP::getPhiBanQuyen() {
+	return this->phibanquyen;
+}
+int TAIKHOANVIP::getThangVIP() {
+	return this->thangVip;
+}
+void TAIKHOANVIP::addThangVIP(int thangThem) {
+	this->thangVip += thangThem;
+}

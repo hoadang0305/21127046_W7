@@ -31,3 +31,6 @@ string BAIHATDOCQUYEN::getTheLoai() {
 int BAIHATDOCQUYEN::getLuotNghe() {
 	return this->luotNghe;
 }
+string BAIHATDOCQUYEN::getLyric() {
+	return this->lyric;
+}

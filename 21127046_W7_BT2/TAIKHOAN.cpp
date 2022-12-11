@@ -68,3 +68,19 @@ string TAIKHOAN::getTenDangNhap() {
 string TAIKHOAN::getMatKhau() {
 	return this->matkhau;
 }
+void TAIKHOAN::xuatDanhSachYeuThich() {
+	if (listNhacYeuthich.size() == 0) cout << "danh sach rong! " << endl;
+	else {
+		for (int i = 0; i < listNhacYeuthich.size(); i++) {
+			listNhacYeuthich[i]->outputBaiHat();
+		}
+	}
+}
+float TAIKHOAN::getPhiBanQuyen() {
+	return this->phibanquyen;
+}
+int TAIKHOAN::getThangVIP() {
+	return 0;
+}
+void TAIKHOAN::addThangVIP(int thangThem) {}
+

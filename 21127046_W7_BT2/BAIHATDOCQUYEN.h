@@ -13,6 +13,7 @@ public:
 	float getGiaTriBanQuyen();
 	string getTenBaiHat();
 	string getTheLoai();
+	string getLyric();
 	int getLuotNghe();
 };
 

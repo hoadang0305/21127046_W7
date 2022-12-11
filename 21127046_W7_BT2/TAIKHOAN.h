@@ -19,5 +19,9 @@ public:
 	virtual bool isVip();
 	virtual string getTenDangNhap();
 	virtual string getMatKhau();
+	virtual void xuatDanhSachYeuThich();
+	virtual float getPhiBanQuyen();
+	virtual int getThangVIP();
+	virtual void addThangVIP(int);
 };
 

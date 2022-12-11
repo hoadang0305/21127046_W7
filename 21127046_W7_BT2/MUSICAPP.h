@@ -14,5 +14,9 @@ public:
 	void baiHatDeXuatVIP();
 	int checkTaiKhoanAvailable(string, string);
 	TAIKHOAN* xuLiDangNhapDangKi();
+	void appRunning(TAIKHOAN*);
+	void phatNhac(TAIKHOAN*);
+	void chonBaiHatYeuThich(TAIKHOAN*);
+	
 };
 

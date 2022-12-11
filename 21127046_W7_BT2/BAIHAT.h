@@ -17,6 +17,7 @@ public:
 	virtual float getGiaTriBanQuyen();
 	virtual string getTenBaiHat();
 	virtual string getTheLoai();
+	virtual string getLyric();
 	virtual int getLuotNghe();
 };
 

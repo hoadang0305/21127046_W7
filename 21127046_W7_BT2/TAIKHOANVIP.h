@@ -15,5 +15,9 @@ public:
 	bool isVip();
 	string getTenDangNhap();
 	string getMatKhau();
+	void xuatDanhSachYeuThich();
+	float getPhiBanQuyen();
+	int getThangVIP();
+	void addThangVIP(int);
 };
 
